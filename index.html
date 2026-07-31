@@ -60,7 +60,7 @@
 
       .profile {
         width: 100%;
-        max-width: 34rem;
+        max-width: 38rem;
         min-width: 0;
         background: rgba(255, 255, 255, 0.92);
         border: 1px solid var(--line);
@@ -70,10 +70,10 @@
       }
 
       .avatar {
-        width: 6rem;
-        height: 6rem;
+        width: 8.25rem;
+        height: 8.25rem;
         display: block;
-        margin-bottom: 2rem;
+        margin: 0;
         border-radius: 50%;
         border: 3px solid #ffffff;
         background: var(--line);
@@ -82,9 +82,21 @@
         object-position: center;
       }
 
+      .identity {
+        display: grid;
+        grid-template-columns: 8.25rem minmax(0, 1fr);
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .identity-copy {
+        min-width: 0;
+      }
+
       h1 {
         margin: 0;
-        font-size: clamp(2.4rem, 11vw, 4.7rem);
+        font-size: 3.5rem;
         line-height: 0.95;
         letter-spacing: 0;
         overflow-wrap: anywhere;
@@ -105,7 +117,7 @@
 
       .email {
         display: inline-block;
-        margin: 0.55rem 0 2rem;
+        margin: 0 0 2rem;
         color: var(--muted);
         font-size: clamp(1rem, 3vw, 1.15rem);
         line-height: 1.5;
@@ -201,14 +213,30 @@
           padding: 1.25rem;
         }
 
+        .identity {
+          grid-template-columns: 6.35rem minmax(0, 1fr);
+          gap: 1rem;
+          margin-bottom: 1.05rem;
+        }
+
         h1 {
-          font-size: clamp(2.35rem, 12vw, 3.4rem);
+          font-size: 2.55rem;
         }
 
         .avatar {
-          width: 5.5rem;
-          height: 5.5rem;
-          margin-bottom: 1.5rem;
+          width: 6.35rem;
+          height: 6.35rem;
+        }
+      }
+
+      @media (max-width: 340px) {
+        .identity {
+          grid-template-columns: 1fr;
+          gap: 1.1rem;
+        }
+
+        h1 {
+          font-size: 2.35rem;
         }
       }
     </style>
@@ -216,18 +244,22 @@
   <body>
     <main>
       <section class="profile" aria-labelledby="name">
-        <img
-          class="avatar"
-          src="assets/profile.jpg"
-          alt="Portrait of Furkan Kesen"
-          width="96"
-          height="96"
-        />
-        <h1 id="name">
-          <span>Furkan</span>
-          <span>Kesen</span>
-        </h1>
-        <p class="role">Data &amp; AI Engineer</p>
+        <div class="identity">
+          <img
+            class="avatar"
+            src="assets/profile.jpg"
+            alt="Portrait of Furkan Kesen"
+            width="132"
+            height="132"
+          />
+          <div class="identity-copy">
+            <h1 id="name">
+              <span>Furkan</span>
+              <span>Kesen</span>
+            </h1>
+            <p class="role">Data &amp; AI Engineer</p>
+          </div>
+        </div>
         <a class="email" data-contact="email-display" href="mailto:imfurkankesen@gmail.com">
           imfurkankesen@gmail.com
         </a>
